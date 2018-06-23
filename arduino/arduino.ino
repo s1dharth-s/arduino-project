@@ -11,58 +11,57 @@ void loop()
 {
   if(Serial.available())
   {
-    count = 0; // Reset count to zero// Keep reading Byte by Byte from the Buffer till the Buffer is empty
-    {
-      char input = Serial.read();
-      Serial.print(input);
-      count++; //
-      Serial.write('*');
-      Serial.write(input);
-      Serial.write('#');
-      
+    if(count==0){
+         Serial.write('*');
+         count++;
     }
-  Serial.println();
+  if(count==12) {
+    Serial.write(Serial.read());
+    Serial.println('#');
+    count=0;}
+  else{
+    Serial.write(Serial.read());
+    count++;
   }
 
-//iR1
+  }
+
+/*/iR1
   
     int readsen1 = digitalRead( irsensor1 );
-    Serial.print("\nPIN12");
-    Serial.print(readsen1);
-    delay(1000);  
-       int readsen2 = digitalRead( irsensor2 );
-    Serial.print("\nPIN10");
-    Serial.print(readsen2);
-    delay(1000);      
-/*    if( readsen1 == 1 )
+     Serial.write('^');
      {
-       Serial.write('^');
-       Serial.write("1high");
-       Serial.write('%');
-       Serial.println("high1");
+       if( readsen1 == HIGH )
+     {
+       Serial.write("high");
      }
 else
-     { Serial.write('^');
-       Serial.write("1low");
-       Serial.write('%');
-         Serial.println("low1");
+     { 
+       Serial.write("low");
+     
       }
+ 
+      Serial.write('%');
+      Serial.println();
+     }
         
    //iR2     
         
        int readsen2 = digitalRead( irsensor2 );
-       if( readsen2 == 1 )
+      Serial.write("^2");
+      {
+       if( readsen2 == HIGH )
      {
-      Serial.write('^');
-       Serial.write("2high");
-       Serial.write('%');
-         Serial.println("high2");
+       Serial.write("high");
+      
+       
      }
 else
      {
-        Serial.write('^');
-       Serial.write("2low");
-       Serial.write('%');
-         Serial.println("low2");
-      }*/
+       Serial.write("low");
+    
+      }
+     Serial.write("%2");
+        Serial.println();
+}*/
 }
