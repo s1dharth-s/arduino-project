@@ -26,6 +26,6 @@
 <div class="container">
   <h2>New Parking</h2>
   <h4>Book a slot now</h4>
-  <a href="book.php" class="btn btn-default btn-lg" role="button">Book</a>
-
+  <a href="availability.php" class="btn btn-default btn-lg" role="button">Book/Availability</a>
+  <a href="book.php" class="btn btn-default btn-lg" role="button">Sign In/Out</a>
 </div>
