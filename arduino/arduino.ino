@@ -25,8 +25,9 @@ void loop()
   }
 
   }
+} //temporary loop ending
 
-/*/iR1
+/*iR1
   
     int readsen1 = digitalRead( irsensor1 );
      Serial.write('^');
@@ -63,5 +64,5 @@ else
       }
      Serial.write("%2");
         Serial.println();
-}*/
 }
+}*/
